@@ -24,6 +24,25 @@ app.get("/admin/deleteUser", (req, res)=>{
     res.send('Delete a user');
   });
 
+
+app.use('/',(err,req,res,next)=>{
+  if(err){
+    //Log your error
+    res.status(500).send("something went wrong");
+  }
+});
+
+app.get("/getUserData",(req, res)=>{
+  //try{
+  //Logic of DB call and get user data
+  throw new Error("dvbjfdhj");
+  res.send("User Data Sent");
+  // } catch (err){
+  // res.status(500).send("Some Error contact support team");
+  // }
+});
+
+
 app.use("/hello",(req, res) => {
   res.send("Hello hello hello!");
 })
